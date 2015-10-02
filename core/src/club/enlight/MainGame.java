@@ -19,7 +19,7 @@ public class MainGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
-		dogImg = new Texture("Doge/dog.jpg");
+		dogImg = new Texture("Doge/Dog.jpg");
 		dogSprite = new Sprite(dogImg);
 		x = 0;
 		y = 0;
