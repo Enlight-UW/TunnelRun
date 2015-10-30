@@ -36,6 +36,7 @@ public class ControllerButtons {
 
     // Kenneth's crappy P880 controller
     public static final String P880Name = "P880";
+
     // Buttons
     public static final int P880B1 = 0;
     public static final int P880B2 = 1;

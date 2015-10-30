@@ -8,10 +8,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class MainGame extends ApplicationAdapter {
+public class MainGame extends ApplicationAdapter implements ExternalInputListener{
 	
 	@Override
 	public void create () {
+		InputManager.getInstance().addExternalListener(this);
 	}
 
 	@Override
@@ -20,5 +21,30 @@ public class MainGame extends ApplicationAdapter {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		StateManager.SM.update();
+	}
+
+	@Override
+	public void onButtonDown(InputEnum buttonType) {
+
+	}
+
+	@Override
+	public void onButtonUp(InputEnum buttonType) {
+
+	}
+
+	@Override
+	public void onTouchDown(int screenX, int screenY, int pointer, int button) {
+
+	}
+
+	@Override
+	public void onTouchUp(int screenX, int screenY, int pointer, int button) {
+
+	}
+
+	@Override
+	public void onTouchDragged(int screenX, int screenY, int pointer) {
+
 	}
 }
