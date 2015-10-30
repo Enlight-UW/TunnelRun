@@ -1,6 +1,6 @@
 package club.enlight.states;
 
-import club.enlight.Assets.Render;
+import club.enlight.assets.Render;
 
 import java.util.ArrayList;
 

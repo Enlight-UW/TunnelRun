@@ -1,4 +1,4 @@
-package club.enlight.Assets;
+package club.enlight.assets;
 
 /**
  * Created by pippo on 10/13/15.
