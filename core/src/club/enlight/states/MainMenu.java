@@ -36,8 +36,8 @@ public class MainMenu extends State {
 
             if(y > Gdx.graphics.getHeight())
             {
-            y = 0.f;
-        }
+                y = 0.f;
+            }
     }
 
     @Override
