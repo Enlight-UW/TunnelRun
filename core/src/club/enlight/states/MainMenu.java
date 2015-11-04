@@ -1,50 +1,51 @@
 package club.enlight.states;
 
+import club.enlight.assets.MenuButtons;
+import club.enlight.handlers.StateManager;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
-import java.util.Random;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class MainMenu extends State {
-
-    Texture texture;
-
-    SpriteBatch batch;
-    float x, y;
-
+    Stage stage;
+    TextButton startButton;
+    TextButton.TextButtonStyle textButtonStyle;
+    /*
+    TextButton.TextButtonStyle textButtonStyle;
+    BitmapFont font;
+    Skin skin;
+    TextureAtlas buttonAtlas;
+    //*/
     public MainMenu()
     {
-        Random rand = new Random();
-        batch = new SpriteBatch();
-        texture = new Texture("Doge/Dog.jpg");
+        stage = new Stage();
+        Gdx.input.setInputProcessor(stage);
+        startButton  = new MenuButtons().MenuTextButton("Play");
+        stage.addActor(startButton);
 
-        x = rand.nextFloat() * 1000.f;
-        y = rand.nextFloat() * 1000.f;
+
+        startButton.addListener(new ClickListener() {
+            public void clicked(InputEvent event, float x, float y) {
+                StateManager.SM.remove();
+            }
+        });
+
     }
 
     @Override
     public void update(float dt)
     {
-        x += 600.f * dt;
-        y += 600.f * dt;
-
-            if(x > Gdx.graphics.getWidth())
-            {
-                x = 0.f;
-            }
-
-            if(y > Gdx.graphics.getHeight())
-            {
-            y = 0.f;
+        if(false){
+            StateManager.SM.replace(2);
         }
     }
 
     @Override
     public void render()
     {
-        batch.begin();
-        batch.draw(texture, x, y);
-        batch.end();
+
+        stage.draw();
     }
 }
