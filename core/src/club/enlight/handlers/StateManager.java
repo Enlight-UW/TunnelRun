@@ -2,6 +2,7 @@ package club.enlight.handlers;
 
 import club.enlight.states.MainMenu;
 import club.enlight.states.PauseMenu;
+import club.enlight.states.Play;
 import club.enlight.states.State;
 import com.badlogic.gdx.Gdx;
 
@@ -20,7 +21,7 @@ public class StateManager {
     private StateManager()
     {
         stack = new Stack<State>();
-        this.put(MAIN_MENU);
+        this.put(PLAY);
     }
 
     public void put(int state)
@@ -59,7 +60,7 @@ public class StateManager {
         }
         else if(state == PLAY)
         {
-
+            return new Play();
         }
         else if(state == PAUSE)
         {
