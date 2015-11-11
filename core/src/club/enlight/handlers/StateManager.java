@@ -1,5 +1,10 @@
 package club.enlight.handlers;
 
+import club.enlight.states.MainMenu;
+import club.enlight.states.PauseMenu;
+import club.enlight.states.Play;
+
+
 import club.enlight.states.State;
 import com.badlogic.gdx.Gdx;
 
@@ -16,6 +21,8 @@ public class StateManager {
     public static StateManager getInstance() {
         return ourInstance;
     }
+
+
 
     private StateManager() {
         this.mStates = new Stack<State>();
@@ -124,6 +131,7 @@ public class StateManager {
         } else {
             throw new IndexOutOfBoundsException("State index (" + stateIndex + ") is out of range of stack (size " + mStates.size() + ")");
         }
+
     }
 
     /**
@@ -132,10 +140,10 @@ public class StateManager {
     public void updateAndDraw() {
         float dt = Gdx.graphics.getDeltaTime();
         for (State s : mStates) {
-            s.update();
+            s.update(dt);
         }
         for (State s : mStates) {
-            s.draw();
+            s.draw(dt);
         }
     }
 }
