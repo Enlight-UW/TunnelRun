@@ -2,6 +2,7 @@ package club.enlight;
 
 import club.enlight.handlers.StateManager;
 import club.enlight.states.MainMenu;
+import club.enlight.states.Play;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -10,12 +11,12 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MainGame extends ApplicationAdapter implements ExternalInputListener {
-
-    @Override
-    public void create() {
-        InputManager.getInstance().addExternalListener(this);
-        StateManager.getInstance().pushState(new MainMenu(), false);
-    }
+	
+	@Override
+	public void create () {
+		StateManager.getInstance().pushState(new MainMenu(), false);
+		InputManager.getInstance().addExternalListener(this);
+	}
 
     @Override
     public void render() {

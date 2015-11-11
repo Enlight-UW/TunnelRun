@@ -47,9 +47,8 @@ public abstract class State {
     /**
      * Method that updates the state called by the state manager. Calls the state's specific onUpdate method
      */
-    public void update() {
+    public void update(float dt) {
         if (!this.mPaused) {
-            float dt = Gdx.graphics.getDeltaTime();
             this.onUpdate(dt);
         }
     }
@@ -65,8 +64,7 @@ public abstract class State {
     /**
      * Method that draws the state called by the state manager. Calls the state's specific onDraw method
      */
-    public void draw() {
-        float dt = Gdx.graphics.getDeltaTime();
+    public void draw(float dt) {
         this.onDraw(dt);
     }
 
