@@ -7,14 +7,18 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import java.util.Random;
 
 public class MainMenu extends State {
+    public MainMenu(){
+        super();
+    }
 
     Texture texture;
 
     SpriteBatch batch;
     float x, y;
 
-    public MainMenu()
-    {
+
+    @Override
+    public void onCreate() {
         Random rand = new Random();
         batch = new SpriteBatch();
         texture = new Texture("Doge/Dog.jpg");
@@ -24,27 +28,38 @@ public class MainMenu extends State {
     }
 
     @Override
-    public void update(float dt)
-    {
+    public void onDraw(float dt) {
+        batch.begin();
+        batch.draw(texture, x, y);
+        batch.end();
+    }
+
+    @Override
+    public void onUpdate(float dt) {
         x += 600.f * dt;
         y += 600.f * dt;
 
-            if(x > Gdx.graphics.getWidth())
-            {
-                x = 0.f;
-            }
+        if (x > Gdx.graphics.getWidth()) {
+            x = 0.f;
+        }
 
-            if(y > Gdx.graphics.getHeight())
-            {
+        if (y > Gdx.graphics.getHeight()) {
             y = 0.f;
         }
     }
 
     @Override
-    public void render()
-    {
-        batch.begin();
-        batch.draw(texture, x, y);
-        batch.end();
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onDestroy() {
+
     }
 }

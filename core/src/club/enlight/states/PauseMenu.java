@@ -1,20 +1,34 @@
 package club.enlight.states;
 
 public class PauseMenu extends State {
-    public PauseMenu()
-    {
+
+    @Override
+    public void onCreate() {
 
     }
 
     @Override
-    public void update(float dt)
-    {
+    public void onDraw(float dt) {
 
     }
 
     @Override
-    public void render()
-    {
+    public void onUpdate(float dt) {
+
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onDestroy() {
 
     }
 }
