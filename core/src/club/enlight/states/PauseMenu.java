@@ -13,7 +13,12 @@ public class PauseMenu extends State {
     TextButton resumeButton;
     TextButton.TextButtonStyle textButtonStyle;
 
-    public PauseMenu(){
+    public PauseMenu() {
+
+    }
+
+    @Override
+    public void onCreate() {
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
         resumeButton = new MenuButtons().MenuTextButton("Resume");
@@ -24,19 +29,31 @@ public class PauseMenu extends State {
         resumeButton.addListener(new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
                 PauseMenu.this.resumeButton.removeListener(this);
-                StateManager.SM.remove();
+                StateManager.getInstance().popAndRemoveState();
             }
         });
-
     }
 
     @Override
-    public void update(float dt) {
-
-    }
-
-    @Override
-    public void render() {
+    public void onDraw(float dt) {
         stage.draw();
+    }
+
+    @Override
+    public void onUpdate(float dt) {
+
+    }
+
+    @Override
+    public void onPause() {
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onDestroy() {
     }
 }

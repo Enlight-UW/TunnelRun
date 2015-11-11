@@ -12,41 +12,49 @@ public class MainMenu extends State {
     Stage stage;
     TextButton startButton;
     TextButton.TextButtonStyle textButtonStyle;
-    /*
-    TextButton.TextButtonStyle textButtonStyle;
-    BitmapFont font;
-    Skin skin;
-    TextureAtlas buttonAtlas;
-    //*/
-    public MainMenu()
-    {
+
+    public MainMenu() {
+    }
+
+    @Override
+    public void onCreate() {
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
-        startButton  = new MenuButtons().MenuTextButton("Play");
+        startButton = new MenuButtons().MenuTextButton("Play");
         stage.addActor(startButton);
-        startButton.setPosition((float)300,(float)200);
+        startButton.setPosition((float) 300, (float) 200);
 
         ClickListener listener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
-                StateManager.SM.put(StateManager.SM.PAUSE);
+                StateManager.getInstance().replaceTopState(null);
                 //startButton.setPosition(startButton.getX()+10,startButton.getY()+10);
             }
         };
         startButton.addListener(listener);
-
     }
 
     @Override
-    public void update(float dt)
-    {
-
-        MainMenu.this.startButton.removeListener(MainMenu.this.listener);
-    }
-
-    @Override
-    public void render()
-    {
-
+    public void onDraw(float dt) {
         stage.draw();
+    }
+
+    @Override
+    public void onUpdate(float dt) {
+
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onDestroy() {
+
     }
 }
