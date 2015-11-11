@@ -6,21 +6,21 @@ repeat: none
 checked-button
   rotate: false
   xy: 1, 1
-  size: 198, 104
-  orig: 198, 104
+  size: 320, 220
+  orig: 320, 220
   offset: 0, 0
   index: -1
 down-button
   rotate: false
-  xy: 201, 1
-  size: 198, 104
-  orig: 198, 104
+  xy: 1, 1
+  size: 320, 220
+  orig: 320, 220
   offset: 0, 0
   index: -1
 up-button
   rotate: false
-  xy: 401, 1
-  size: 198, 104
-  orig: 198, 104
+  xy: 323, 1
+  size: 320, 220
+  orig: 320, 220
   offset: 0, 0
   index: -1

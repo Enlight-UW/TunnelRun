@@ -24,22 +24,23 @@ public class MainMenu extends State {
         Gdx.input.setInputProcessor(stage);
         startButton  = new MenuButtons().MenuTextButton("Play");
         stage.addActor(startButton);
+        startButton.setPosition((float)300,(float)200);
 
-
-        startButton.addListener(new ClickListener() {
+        ClickListener listener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
-                StateManager.SM.remove();
+                StateManager.SM.put(StateManager.SM.PAUSE);
+                //startButton.setPosition(startButton.getX()+10,startButton.getY()+10);
             }
-        });
+        };
+        startButton.addListener(listener);
 
     }
 
     @Override
     public void update(float dt)
     {
-        if(false){
-            StateManager.SM.replace(2);
-        }
+
+        MainMenu.this.startButton.removeListener(MainMenu.this.listener);
     }
 
     @Override
