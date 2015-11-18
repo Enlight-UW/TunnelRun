@@ -1,0 +1,26 @@
+
+GrnButton.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+GrnButton1
+  rotate: false
+  xy: 1, 1
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
+GrnButton2
+  rotate: false
+  xy: 203, 1
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
+GrnButton3
+  rotate: false
+  xy: 405, 1
+  size: 200, 100
+  orig: 200, 100
+  offset: 0, 0
+  index: -1
