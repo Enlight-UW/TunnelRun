@@ -1,5 +1,6 @@
 package club.enlight.states;
 
+import club.enlight.InputManager;
 import club.enlight.assets.MenuButtons;
 import club.enlight.handlers.StateManager;
 import com.badlogic.gdx.Gdx;
@@ -11,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 public class MainMenu extends State {
     Stage stage;
     TextButton startButton;
-    TextButton.TextButtonStyle textButtonStyle;
 
     public MainMenu() {
     }
@@ -26,10 +26,11 @@ public class MainMenu extends State {
 
         ClickListener listener = new ClickListener() {
             public void clicked(InputEvent event, float x, float y) {
-                StateManager.getInstance().replaceTopState(null);
-                //startButton.setPosition(startButton.getX()+10,startButton.getY()+10);
+                StateManager.getInstance().replaceTopState(new Play());
+                Gdx.input.setInputProcessor(InputManager.getInstance());
             }
         };
+
         startButton.addListener(listener);
     }
 

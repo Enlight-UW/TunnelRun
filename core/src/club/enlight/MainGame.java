@@ -14,8 +14,8 @@ public class MainGame extends ApplicationAdapter implements ExternalInputListene
 	
 	@Override
 	public void create () {
+        InputManager.getInstance().addExternalListener(this);
 		StateManager.getInstance().pushState(new MainMenu(), false);
-		InputManager.getInstance().addExternalListener(this);
 	}
 
     @Override
